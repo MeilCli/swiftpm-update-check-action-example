@@ -8,16 +8,8 @@ jobs:
     runs-on: macOS-latest
     steps:
     - uses: actions/checkout@v1
-    - name: Dump GitHub context
-      env:
-        GITHUB_CONTEXT: ${{ toJson(github) }}
-      run: echo "$GITHUB_CONTEXT"
     - uses: MeilCli/swiftpm-update-check-action@master
       id: outdated
-    - name: Dump GitHub context
-      env:
-        GITHUB_CONTEXT: ${{ toJson(github) }}
-      run: echo "$GITHUB_CONTEXT"
     - uses: 8398a7/action-slack@v2
       if: steps.outdated.outputs.has_swiftpm_update != 'false'
       with:
