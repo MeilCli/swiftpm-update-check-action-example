@@ -3,7 +3,7 @@ name: Check Package
 on: 
   schedule:
     #- cron: '0 8 * * 5' # every friday AM 8:00
-    - cron: '50 * * * *'
+    - cron: '53 * * * *'
 jobs:
   swiftpm:
     runs-on: macOS-latest
